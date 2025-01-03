@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+{% block title %}
+<title>
+    Admin Pannel
+</title>
+{% endblock title %}
+{% load static %}
+
+{% block content %}
+<h1>Admin Pannel</h1>
+<hr>
+<a href="{% url 'appoint_add' %}">+ Add Appointment</a>
+<hr>
+{% for i in appoint %}
+<h2><a href="{% url 'appoint_view' i.pk %}">{{i.patient}}</a></h2>
+<p>{{i.appointment_time}}</p>
+<p>{{i.status}}</p>
+<hr>
+<a href="{% url 'appoint_update' i.pk %}">Update</a>
+<a href="{% url 'appoint_delete' i.pk %}">Delete</a>
+{% endfor %}
+{% endblock %}

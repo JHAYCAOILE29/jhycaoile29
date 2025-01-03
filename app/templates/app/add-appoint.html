@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+{% block title %}
+<title>
+    Add Appointment
+</title>
+{% endblock title %}
+{% load static %}
+
+{% block content %}
+    <form action="{% url 'appoint_add' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Confirm</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+{% block title %}
+<title>
+    Update Appointment
+</title>
+{% endblock title %}
+{% load static %}
+
+{% block content %}
+    <form action="{% url 'appoint_update' object.pk %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Update</button>
+    </form>
+{% endblock %}

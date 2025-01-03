@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+{% block title %}
+<title>
+    Delete Appointment
+</title>
+{% endblock title %}
+{% load static %}
+
+{% block content %}
+    <form action="{% url 'appoint_delete' object.pk %}" method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete? {{object.patient}}</p> 
+        <button type="submit">Delete</button>
+    </form>
+{% endblock %}

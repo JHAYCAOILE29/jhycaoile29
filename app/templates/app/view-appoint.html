@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %}
+{% block title %}
+<title>
+    Appointment
+</title>
+{% endblock title %}
+{% load static %}
+
+{% block content %}
+<h1>Appointment Details</h1>
+<hr>
+<p>Patient: {{appoint.patient}}</p>
+<p>Time: {{appoint.appointment_time}}</p>
+<p>Reason: {{appoint.reason}}</p>
+<hr>
+<p>Doctor: {{appoint.doctor}}</p>
+<hr>
+<p>Status: {{appoint.status}}</p>
+
+{% endblock %}
